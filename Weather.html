@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌦Weather Forecast App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Weather.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class=" min-h-screen font-sans transition-all duration-1000  bg-[url(https://wallpaperaccess.com/full/1387720.jpg)] bg-center bg-cover ">
+  <div class="max-w-5xl mx-auto p-4">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">🌦 Weather Forecast</h1>
+
+    <!-- Input Section -->
+    <div class="flex flex-col md:flex-row gap-3 mb-4 items-center justify-center">
+      <input id="cityInput" type="text" placeholder="Enter city..." class="px-4 py-2 w-full md:w-64 border rounded focus:outline-none" />
+      <button id="searchBtn" class="bg-blue-300 text-white px-4 py-2 rounded hover:bg-blue-600">Search</button>
+      <button id="locationBtn" class="bg-green-300 text-white px-4 py-2 rounded hover:bg-green-600">Current Location</button>
+      <button id="unitToggle" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">°C/°F</button>
+    </div>
+
+    <!-- Dropdown for recent cities -->
+    <div id="recentDropdown" class="mb-4 none">
+      <select id="recentCities" class="w-full md:w-64 px-4 py-2 border rounded">
+        <option disabled selected>Select a recent city</option>
+      </select>
+    </div>
+
+    <!-- Alert -->
+    <div id="alertBox" class="hidden mb-4 bg-red-100 border border-red-400 text-red-600 px-4 py-2 rounded"></div>
+
+    <!-- Current Weather -->
+    <div id="weatherContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+    </div>
+
+    <!-- Extended Forecast -->
+    <h2 class="text-3xl font-semibold text-white mb-4"> 5-Day Forecast 🌦</h2>
+    <div id="forecastContainer" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-4 gap-4 ">
+     
+
+      <!-- Card 1 -->
+       <div class="bg-transparent p-3 rounded text-center border-2 border-solid border-gray-300 hover:animate-bounce shadow-xl/20 ">
+    <p class="text-2xl font-bold text-white mb-6">Mon,📅 Sep 22</p>
+    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Rain" class="mx-auto w-16" />
+    <p class="text-xl text-white font-bold"> 🌡️ 24°C</p>
+    <p class="text-sm text-white font-bold">💧 70% | 💨 4.8 m/s</p>
+  </div>
+<!-- Card 2 -->
+   <div class="bg-transparent p-3 rounded text-center border-2 border-solid border-gray-300 hover:animate-bounce shadow-xl/20">
+    <p class="text-2xl font-bold text-white mb-6">Tue,📅 Sep 23</p>
+    <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="Clouds" class="mx-auto w-16" />
+    <p class="text-lg text-white font-bold"> 🌡️ 26°C</p>
+    <p class="text-sm text-white font-bold">💧 50% | 💨 3.2 m/s</p>
+  </div>
+<!-- Card 3 -->
+   <div class="bg-transparent p-3 rounded  text-center border-2 border-solid border-gray-300 hover:animate-bounce shadow-xl/20">
+    <p class="text-2xl font-bold text-white mb-6">Wed,📅 Sep 24</p>
+    <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="Clear" class="mx-auto w-16" />
+    <p class="text-lg text-white font-bold"> 🌡️ 29°C</p>
+    <p class="text-sm text-white font-bold">💧 40% | 💨 2.0 m/s</p>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="bg-transparent p-3 rounded text-center border-2 border-solid border-gray-300 hover:animate-bounce shadow-xl/20">
+    <p class="text-2xl font-bold text-white mb-6">Thu,📅 Sep 25</p>
+    <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="Broken Clouds" class="mx-auto w-16" />
+    <p class="text-lg text-white font-bold"> 🌡️27°C</p>
+    <p class="text-sm text-white font-bold">💧 55% | 💨 3.5 m/s</p>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="bg-transparent p-3 rounded shadow-xl/20 border-2 border-solid border-gray-300 hover:animate-bounce text-center">
+    <p class="text-2xl font-bold text-white mb-6">Fri,📅  Sep 26</p>
+    <img src="https://openweathermap.org/img/wn/09d@2x.png" alt="Shower Rain" class="mx-auto w-16" />
+    <p class="text-lg font-bold text-white">  🌡️23°C</p>
+    <p class="text-sm text-white font-bold">💧 80% | 💨 6.2 m/s</p>
+  </div>
+    </div>
+  </div>
+
+  <script src="Weather.js"></script>
+</body>
+</html>
